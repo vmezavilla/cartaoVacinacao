@@ -1,0 +1,52 @@
+.separador_modal{
+	background-color:#8F8F8F;
+	height:1px;
+}
+
+.label{
+	position:relative;
+	left:0px;
+	margin: 0px 0px 1px 0px;
+	font-size:14px;
+	font-family:arial;
+	color:#3a3a3a;
+}
+
+.titulo_modal{
+	color:#F5630E;
+	font-family: arial;
+	font-size:18px;
+	text-align:center;
+}
+
+.modal_interna{
+	margin-top:35px;
+	width:90%;
+}
+
+.modal{
+	border:solid 3px #D0D0D0;
+}
+
+.texto_titulo_alerta_modal{
+	color:#F5630E;
+	font-family: Trebuchet MS;
+	font-size:18px;
+	text-align:center;
+}
+
+.texto_titulo_sucesso_modal{
+	color:#51A835;
+	font-family: Trebuchet MS;
+	font-size:18px;
+	text-align:center;
+	
+}
+
+.texto_titulo_atencao_modal{
+	color:#A62124;
+	font-family: Trebuchet MS;
+	font-size:18px;
+	text-align:center;
+	
+}	

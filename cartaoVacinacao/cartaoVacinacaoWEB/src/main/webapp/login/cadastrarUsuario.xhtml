@@ -1,0 +1,35 @@
+<p:dialog  modal="true" widgetVar="cadastrarUsuario" draggable="false"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+	
+	<h:form id="cadastrarUsuarioForm">
+		<div class="modal" style="min-height: 200px; width: 360px;">
+			<center>
+				<div class="modal_interna">
+					<div class="titulo_modal">
+						<span>#{msg['display.cadastrar.usuario']}</span>
+					</div>
+					<div class="separador_modal" />
+				</div>
+			</center>
+			
+			<h:panelGrid columns="2">
+				<h:outputText value="#{msg['display.usuario']}" />
+				<h:inputText value="#{loginController.form.usuario}"
+					label="#{msg['display.usuario']}" required="true" />
+				<h:outputText value="#{msg['display.senha']}" />
+				<h:inputSecret value="#{loginController.form.senha}"
+					label="#{msg['display.senha']}" required="true" />
+			</h:panelGrid>
+			
+			<p:commandButton value="#{msg['display.salvar.upper']}"
+				actionListener="#{loginController.cadastrarUsuario()}"
+				update="exibeMensagem,form" 
+				onsuccess="PF('cadastrarUsuario').hide();"/>
+				
+		</div>
+	</h:form>
+</p:dialog>

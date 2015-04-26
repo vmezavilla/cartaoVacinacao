@@ -1,0 +1,31 @@
+<p:dialog  modal="true" widgetVar="statusDialog" draggable="false" closable="false"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+	
+	<h:form>
+		<div class="modal" style="min-height:200px; width:360px;">
+			<center>
+				<div class="modal_interna">	
+					<center>
+						<div class="titulo_modal" style="width:80px; text-align:center;">Aviso!</div>
+					</center>
+					<div class="separador_modal">
+						<h:graphicImage height="1" value="" url="/imgs/img_link.gif"/>
+					</div>
+					<center>
+						<div class="label" style="height:25px; width:200px; margin:40px 0px 20px 0px; text-align:center">
+							#{msg['display.aguarde']}
+						</div>	
+						<div style="position: relative; margin-top: 10px; text-align: center">
+							<h:graphicImage value="" url="/imgs/progressbar.gif" />
+						</div>	
+						<br /><br />
+					</center>
+				</div>	
+			</center>
+		</div>
+	</h:form>
+</p:dialog>

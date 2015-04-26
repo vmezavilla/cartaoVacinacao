@@ -1,0 +1,52 @@
+<p:dialog  modal="true"  id="exibeMensagem" widgetVar="exibeMensagem" draggable="false" closable="false"  visible="#{facesContext.maximumSeverity != null}"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+   	<div class="modal" style="width:360px;">
+
+			<div class="modal_interna">
+				<h:form id="frmMensagem">
+					<h:panelGroup rendered="#{facesContext.maximumSeverity.ordinal == 0}">
+						<div class="texto_titulo_sucesso_modal">
+							<span>#{msg['display.sucesso']}!</span>
+						</div>
+					</h:panelGroup>
+					
+					<h:panelGroup rendered="#{facesContext.maximumSeverity.ordinal == 1}">
+						<div class="texto_titulo_alerta_modal">
+							<span>#{msg['display.alerta']}!</span>
+						</div>
+					</h:panelGroup>
+					
+					<h:panelGroup rendered="#{facesContext.maximumSeverity.ordinal == 2 or facesContext.maximumSeverity.ordinal == 3}">
+						<div class="texto_titulo_atencao_modal">
+							<span>#{msg['display.atencao.upper']}!</span>
+						</div>
+					</h:panelGroup>
+					
+					<div class="separador_modal"><h:graphicImage library="img" value="/imgs/img_link.gif" width="27px" height="25px" /></div>
+					<div class="texto_modal" style="max-height: 300px; overflow-y: auto">
+						<p:messages autoUpdate="true" showDetail="true" showSummary="false"  style="font-size:14px;" closable="false"/>
+					</div>
+					<center>
+
+						<div style="height:45px; width:68px; margin-top:40px">
+							<h:panelGroup rendered="#{forwardViewId == null}">
+								<p:commandLink value="OK" oncomplete="PF('exibeMensagem').hide();"
+									update="exibeMensagem" />
+							</h:panelGroup>
+	
+							<h:panelGroup rendered="#{forwardViewId != null}">
+								<h:link id="btOk" value="OK" styleClass="botao_texto"
+									view="#{forwardViewId}" />
+							</h:panelGroup>
+						</div>
+					</center>
+				</h:form>
+			</div>
+
+	</div>
+</p:dialog>

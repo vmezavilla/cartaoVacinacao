@@ -1,0 +1,71 @@
+<project>
+    <name>CartaoVacinacaoEAR</name>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>cartao.vacinacao</groupId>
+    <artifactId>CartaoVacinacaoEAR</artifactId>
+    <packaging>ear</packaging>
+    <version>1.0</version>
+ 
+    <build>
+        <plugins>
+ 
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                </configuration>
+            </plugin>
+ 
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-ejb-plugin</artifactId>
+                <version>2.3</version>
+                <configuration>
+                    <ejbVersion>3.1</ejbVersion>
+                </configuration>
+            </plugin>
+ 
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-ear-plugin</artifactId>
+                <version>2.5</version>
+                <configuration>
+                    <displayName>cartao.vacinacao</displayName>
+                    <modules>
+                        <webModule>
+                            <groupId>cartao.vacinacao</groupId>
+                            <artifactId>CartaoVacinacaoWEB</artifactId>
+                            <contextRoot>/CartaoVacinacao</contextRoot>
+                        </webModule>
+                    </modules>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <dependencies>
+		<dependency>
+			<groupId>cartao.vacinacao</groupId>
+			<version>1.0</version>
+			<artifactId>CartaoVacinacaoCOMMON</artifactId>
+			<type>jar</type>
+		</dependency>
+	
+        <dependency>
+            <groupId>cartao.vacinacao</groupId>
+            <artifactId>CartaoVacinacaoEJB</artifactId>
+            <version>1.0</version>
+            <type>ejb</type>
+        </dependency>
+         
+        <dependency>
+            <groupId>cartao.vacinacao</groupId>
+            <artifactId>CartaoVacinacaoWEB</artifactId>
+            <version>1.0</version>
+            <type>war</type>
+        </dependency>     
+    </dependencies>
+ 
+</project>

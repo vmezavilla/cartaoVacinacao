@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+      
+  <h:head>
+    <title>Cartao Vacinacao</title>
+    <link rel="StyleSheet" type="text/css" href="../css/cartao_vacinacao.css" media="screen"/>
+    <link rel="SHORTCUT ICON"  href="/imgs/zeGotinha.png"/>
+    <f:loadBundle basename="messages" var="msg"/>
+  </h:head>
+  <h:body>
+      <table width="100%">
+        <tr>
+          <td colspan="2" align="center">
+            <ui:insert name="cabecalho">
+               <link rel="StyleSheet" type="text/css" href="../css/body.css" media="screen"/>
+              <ui:include src="/template/header.xhtml"></ui:include>
+            </ui:insert>
+          </td>
+        </tr>
+        <tr>
+          <td width="200px" valign="top">
+            <ui:insert name="menu">
+            	<ui:include src="menu.xhtml"></ui:include>
+            </ui:insert>
+          </td>
+          <td>
+            <ui:insert name="body"/>
+          </td>
+        </tr>
+      </table>
+      	<ui:include src="/dialogos/exibeMensagem.xhtml" />
+		<p:ajaxStatus id="status"
+		onstart="PF('statusDialog').show();"
+		oncomplete="PF('statusDialog').hide();">
+			<ui:include src="/dialogos/statusDialog.xhtml"/>
+		</p:ajaxStatus>
+</h:body>
+</html>

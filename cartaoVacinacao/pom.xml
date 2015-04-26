@@ -1,0 +1,54 @@
+<project>
+    <name>CartaoVacinacao</name>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>vacinacao</groupId>
+    <version>1.0</version>
+    <artifactId>CartaoVacinacao</artifactId>
+    <packaging>pom</packaging>
+ 
+    <modules>
+        <module>CartaoVacinacaoEAR</module>
+        <module>CartaoVacinacaoEJB</module>
+        <module>CartaoVacinacaoWEB</module>
+		<module>CartaoVacinacaoCOMMON</module>
+    </modules>
+ 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                </configuration>
+            </plugin>
+ 
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-ejb-plugin</artifactId>
+                <version>2.3</version>
+                <configuration>
+                    <ejbVersion>3.1</ejbVersion>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+ 
+    <repositories>
+        <repository>
+            <id>maven2-repository.dev.java.net</id>
+            <name>Java.net Repository for Maven</name>
+            <url>http://download.java.net/maven/2</url>
+        </repository>
+ 
+        <repository>
+            <id>prime-repo</id>
+            <name>Prime Technology Maven Repository</name>
+            <url>http://repository.primefaces.org/</url>
+            <layout>default</layout>
+       </repository>
+    	
+    </repositories>
+</project>
